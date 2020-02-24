@@ -32,7 +32,7 @@ class MapViewController: UIViewController {
     searchTextField.delegate = self
     
     // configure tracking button
-    userTrackingButton = MKUserTrackingButton(frame: CGRect(x: 20, y: 20, width: 40, height: 40))
+    userTrackingButton = MKUserTrackingButton(frame: CGRect(x: 20, y: 30, width: 40, height: 40))
     mapView.addSubview(userTrackingButton)
     userTrackingButton.mapView = mapView
     
