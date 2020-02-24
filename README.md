@@ -57,3 +57,27 @@ public func convertPlaceNameToCoordinate(addressString: String, completion: @esc
   }
 }
 ```
+
+
+## 5. Customize MKMarkerViewAnnoation 
+
+```swift 
+func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+  guard annotation is MKPointAnnotation else { return nil }
+
+  let identifier = "annotationView"
+  var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
+
+  if annotationView == nil {
+    annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+    annotationView?.canShowCallout = true
+    annotationView?.glyphTintColor = .systemYellow
+    annotationView?.markerTintColor = .systemBlue
+    //annotationView?.glyphText = "iOS 6.3"
+    annotationView?.glyphImage = UIImage(named: "duck")
+  } else {
+    annotationView?.annotation = annotation
+  }
+  return annotationView
+}
+```
