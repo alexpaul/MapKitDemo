@@ -59,7 +59,7 @@ public func convertPlaceNameToCoordinate(addressString: String, completion: @esc
 ```
 
 
-## 5. Customize MKMarkerViewAnnoation 
+## 5. Customize MKMarkerAnnotationView 
 
 ```swift 
 func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
